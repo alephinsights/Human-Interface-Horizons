@@ -66,7 +66,21 @@ function SEO({ description, lang, meta, title }: Props) {
           content: metaDescription,
         },
       ].concat(meta)}
-    ></Helmet>
+    >
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LH6RKKRCBT"></script>
+    <script>
+      {
+        `window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer.push(arguments);}
+        gtag('consent', 'default', {
+          'analytics_storage': 'denied'
+        });
+        gtag('js', new Date());
+        gtag('config', 'G-LH6RKKRCBT');`
+      }
+    </script>
+
+    </Helmet>
   )
 }
 

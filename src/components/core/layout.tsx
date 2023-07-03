@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import { Header } from './header'
 import { Footer } from './footer'
 import { PageHeader } from '../PageHeader'
+import Consent from '../Consent.js'
 import { graphql, useStaticQuery } from 'gatsby'
 import '../../styles/layout.scss'
 
@@ -34,14 +35,17 @@ const Layout = (props: Props) => {
   )
 
   return (
-    <div className={className ? className : ' layout-grid'}>
-      <Header
-        siteTitle={title || site.siteMetadata.title}
-        PageHeader={pageHeader ? <PageHeader text={pageHeader} breadcrumb={breadcrumb} /> : <Fragment></Fragment>}
-      />
-      <div className={mainContainerClassName ? mainContainerClassName : 'main-container'}>{children}</div>
-      <Footer />
-    </div>
+    <>
+      <Consent />
+      <div className={className ? className : ' layout-grid'}>
+        <Header
+          siteTitle={title || site.siteMetadata.title}
+          PageHeader={pageHeader ? <PageHeader text={pageHeader} breadcrumb={breadcrumb} /> : <Fragment></Fragment>}
+        />
+        <div className={mainContainerClassName ? mainContainerClassName : 'main-container'}>{children}</div>
+        <Footer />
+      </div>
+    </>
   )
 }
 
