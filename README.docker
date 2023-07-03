@@ -1,0 +1,3 @@
+To make the Aleph dev version of this site:
+yarn build
+docker -H ssh://10.50.50.10 compose up --build -d

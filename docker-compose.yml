@@ -1,0 +1,28 @@
+version: "0.1"
+
+
+# join the traefik network, so that discovery works
+networks:
+  default:
+    name: traefik_default
+    external: true
+
+services:
+  hih:
+    build:
+      context: .
+
+    restart: unless-stopped
+
+    container_name: hih
+
+      #    ports:
+      #      - "9000:80"
+    labels:
+      ## make traefik take notice
+      - "traefik.enable=true"
+      ## rule for the router
+      - "traefik.http.routers.hih.rule=Host(`hih.dev.alephinsights.com`)"
+      ## https requires this - else the whole router doesn't work at all
+      - "traefik.http.routers.hih.tls.certResolver=cloudflare"
+
