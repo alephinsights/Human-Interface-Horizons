@@ -36,7 +36,8 @@ function Consent() {
 				}
 			}}
 		>
-			This website uses cookies to understand user behaviour.{' '}
+			This website uses some essential cookies to understand user behaviour. For further details visit our
+			{' '}
 			{
 				// link with white text
 			}
