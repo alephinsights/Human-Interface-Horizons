@@ -10,7 +10,7 @@ export const Footer = () => {
           About
         </Link>
       </div>
-      <div className="footer-center">© Crown copyright (2021), Dstl. Date of last review 01/01/2021</div>
+      <div className="footer-center">© Crown copyright (2023), Dstl. Date of last review 01/01/2021</div>
       <div className="footer-right">
         <Link className="footer-links" to="/privacy">
           Privacy
